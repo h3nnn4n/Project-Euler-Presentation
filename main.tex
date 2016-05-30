@@ -346,14 +346,76 @@ Universidade do Estado de Santa Catarina}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Problema}
+    \frametitle{Problema 142}
 
     \begin{center}
         \textit{
+        Find the smallest x + y + z with integers $x > y > z > 0$ such that x + y, x - y, x + z, x - z, y + z, y - z are all perfect squares.
         }
     \end{center}
+\end{frame}
 
+\begin{frame}
+    \frametitle{Problema 142}
     Soluçao:
+
+
+    \begin{minipage}[b]{0.45\linewidth}
+        \begin{align}
+            a & = x + y \\
+            b & = x - y \\
+            c & = x + z \\
+            d & = x - z \\
+            e & = y + z \\
+            f & = y - z
+        \end{align}
+    \end{minipage}
+    \begin{minipage}[b]{0.45\linewidth}
+        \begin{align}
+            a - c = f \\
+            a - d = e \\
+            a - e = d \\
+            b + f = d \\
+            c + f = a \\
+            c - e = b \\
+            d - b = f \\
+            d - f = c
+        \end{align}
+    \end{minipage}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Problema 142}
+
+    \begin{align}
+        a - c              &= f\\
+        a - e              &= d\\
+        (x+y) - (x+z)      &= f\\
+        (x+y) - (y+z)      &= d\\
+        2x + 2y - x -y -2z &= f+d\\
+        x +y -2z           &= f+d\\
+        a -2z              &= f+d\\
+        -2z                &= f+d-a\\
+        -2z                &= f-e \\
+        z                  &= \frac{e-f}{2}
+    \end{align}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 142}
+
+    Soluçao: \\
+
+    \begin{itemize}
+        \item Calcula-se todos os quadrados perfeitos dentro de um intervalo ($x^2, x \in [1, 1000]$).
+        \item Iterando $a, c, d$ sobre os quadrados perfeitos obtem-se $b, e, f$ utlizando as equações $f=a-c$, $e=a-d$ e $b=c-e$.
+        \item Verifica-se se $a<c<d$ e se $b, e, f > 0$.
+        \item Verifica-se se $e, f$ possuem a mesma paridade.
+        \item Verifica-se se $b, e, f$ são quadrados perfeitos.
+        \item Sabendo que $z=\frac{e-f}{2}$, $x=c-z$ e $y=a-x$, obtem-se $x, y, z$.
+    \end{itemize}
+
     \begin{center}
     \end{center}
 \end{frame}
